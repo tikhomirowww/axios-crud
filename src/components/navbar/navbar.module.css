@@ -1,0 +1,15 @@
+.navbar {
+  background-color: yellowgreen;
+  color: white;
+  height: 80px;
+  padding: 20px;
+  display: flex;
+  gap: 30px;
+}
+
+.navbar a {
+  all: unset;
+  cursor: pointer;
+  font-size: 30px;
+  font-weight: 800;
+}
