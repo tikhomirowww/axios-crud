@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./card.module.css";
 import { Link } from "react-router-dom";
 
-const Card = ({ item }) => {
+const Card = ({ item, deleteContact }) => {
   return (
     <div>
       <img width={300} src={item.image} alt="" />
@@ -15,7 +15,7 @@ const Card = ({ item }) => {
         <Link to={`/edit/${item.id}`}>
           <button>Edit</button>
         </Link>
-        <button>Delete</button>
+        <button onClick={() => deleteContact(item.id)}>Delete</button>
       </div>
     </div>
   );

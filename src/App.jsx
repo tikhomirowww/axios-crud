@@ -9,13 +9,14 @@ const App = () => {
   const [contacts, setContacts] = useState([]);
   const [oneContact, setOneContact] = useState(null);
 
-  const createContact = (newContact) => {
-    axios.post(API, newContact);
-  };
-
   const getContacts = async () => {
     const result = await axios.get(API);
     setContacts(result.data);
+  };
+
+  const createContact = async (newContact) => {
+    await axios.post(API, newContact);
+    getContacts();
   };
 
   const getOneContact = async (id) => {
@@ -23,15 +24,27 @@ const App = () => {
     setOneContact(result.data);
   };
 
+  const editContact = async (id, newContact) => {
+    await axios.put(`${API}/${id}`, newContact);
+    getContacts();
+  };
+
+  const deleteContact = async (id) => {
+    await axios.delete(`${API}/${id}`);
+    getContacts();
+  };
+
   return (
     <div>
       <Navbar />
       <MainRoutes
+        editContact={editContact}
         contacts={contacts}
         getContacts={getContacts}
         createContact={createContact}
         oneContact={oneContact}
         getOneContact={getOneContact}
+        deleteContact={deleteContact}
       />
     </div>
   );

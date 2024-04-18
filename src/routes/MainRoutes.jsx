@@ -10,12 +10,20 @@ const MainRoutes = ({
   contacts,
   oneContact,
   getOneContact,
+  editContact,
+  deleteContact,
 }) => {
   return (
     <Routes>
       <Route
         path="/"
-        element={<ContactsList contacts={contacts} getContacts={getContacts} />}
+        element={
+          <ContactsList
+            contacts={contacts}
+            getContacts={getContacts}
+            deleteContact={deleteContact}
+          />
+        }
       />
       <Route
         path="/add"
@@ -24,7 +32,11 @@ const MainRoutes = ({
       <Route
         path="/edit/:id"
         element={
-          <EditPage oneContact={oneContact} getOneContact={getOneContact} />
+          <EditPage
+            editContact={editContact}
+            oneContact={oneContact}
+            getOneContact={getOneContact}
+          />
         }
       />
     </Routes>

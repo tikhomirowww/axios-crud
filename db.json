@@ -1,18 +1,11 @@
 {
   "contacts": [
     {
-      "name": "Илья Тихомиров",
+      "name": "Ilia Tikhomirov",
       "phone": "0703775060",
       "email": "tihomirovi92@gmail.com",
-      "image": "https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg",
+      "image": "https://t4.ftcdn.net/jpg/05/94/18/23/360_F_594182395_F2ECv0BYV7GbKS8aVNK5azv73mhcOZoc.jpg",
       "id": 1
-    },
-    {
-      "name": "test",
-      "phone": "0703775060",
-      "email": "tihomirovi92@gmail.com",
-      "image": "https://buffer.com/library/content/images/size/w1200/2023/10/free-images.jpg",
-      "id": 2
     }
   ]
 }

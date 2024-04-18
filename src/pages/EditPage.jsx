@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Input from "../ui/input/Input";
 import { useNavigate, useParams } from "react-router-dom";
 
-const EditPage = ({ getOneContact, oneContact }) => {
+const EditPage = ({ getOneContact, oneContact, editContact }) => {
   const { id } = useParams();
   useEffect(() => {
     getOneContact(id);
@@ -38,6 +38,9 @@ const EditPage = ({ getOneContact, oneContact }) => {
       email,
       image,
     };
+
+    editContact(id, contactObj);
+
     navigate("/");
     setName("");
     setEmail("");

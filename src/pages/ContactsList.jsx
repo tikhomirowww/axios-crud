@@ -1,12 +1,11 @@
 import React, { useEffect } from "react";
 import Card from "../components/card/Card";
 
-const ContactsList = ({ getContacts, contacts }) => {
+const ContactsList = ({ getContacts, contacts, deleteContact }) => {
   useEffect(() => {
     getContacts();
   }, []);
 
-  console.log(contacts, "in contacts list");
   return (
     <div
       style={{
@@ -17,7 +16,7 @@ const ContactsList = ({ getContacts, contacts }) => {
       }}
     >
       {contacts.map((item) => (
-        <Card key={item.id} item={item} />
+        <Card key={item.id} item={item} deleteContact={deleteContact} />
       ))}
     </div>
   );
